@@ -1,0 +1,122 @@
+.table{
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 10px;
+}
+tr:hover:not(.thead), .edit-block:hover{
+    background-color: rgb(160, 162, 162);
+}
+
+td, th{
+    padding: 15px 15px;
+}
+td{
+    border-top: 1px solid rgb(160, 162, 162);
+}
+th, .index{
+    font-weight: bold;
+}
+.task-name{
+    width: 24%;
+}
+
+/* edit block */
+
+.edit-block{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+
+.input{
+    width: 50%;
+    padding: 8px 10px;
+    font-size: 20px;
+    border: 1px solid rgb(160, 162, 162);
+}
+
+
+.input:focus{
+    outline: none;
+    box-shadow: 0px 0px 0px 3px rgba(37, 201, 255, 0.386);
+}
+
+
+.btn{
+    /* width: 100px; */
+    padding: 10px 15px;
+    font-size: 18px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+/* save btn */
+.save-btn{
+    /* width: 80px; */
+    background-color: rgb(32, 135, 32);
+}
+
+.save-btn:hover{
+    background-color: rgb(29, 115, 29);
+    cursor: pointer;
+}
+.save-btn:active{
+    background-color: rgb(51, 129, 51);
+    box-shadow: 0px 0px 3px 3px rgba(32, 135, 32, 0.348);
+}
+
+/* edit-btn */
+
+.edit-btn{
+    background-color: rgb(255, 154, 30);
+}
+
+.edit-btn:hover{
+    cursor: pointer;
+    background-color: rgb(253, 164, 55);
+}
+
+.edit-btn:active{
+    background-color: rgb(253, 143, 9);
+    box-shadow: 0px 0px 3px 3px rgba(253, 164, 55, 0.516);
+}
+
+/* delete-btn */
+
+.delete-btn{
+    background-color: rgb(206, 52, 52);
+}
+
+.delete-btn:hover{
+    cursor: pointer;
+    background-color: rgb(215, 71, 71);
+}
+
+.delete-btn:active{
+    background-color: rgb(194, 22, 22);
+    box-shadow: 0px 0px 3px 3px rgba(206, 52, 52, 0.499);
+}
+
+.delete-btn:disabled{
+    background-color: rgb(237, 124, 124);
+    cursor: default;
+}
+.delete-btn:disabled:active{
+    box-shadow: none;
+}
+
+/* none section */
+.none{
+    width: 100%;
+    height: 200px;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

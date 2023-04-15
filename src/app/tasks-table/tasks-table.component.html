@@ -1,0 +1,30 @@
+<div class="wrapper">
+    <table class="table" *ngIf="empty; else none">
+        <tr class="thead">
+            <th>#</th>
+            <th class="task-name">Task</th>
+            <th>Check</th>
+            <th>DONE/IN PROGRESS</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr *ngFor="let task of taskList; let i = index">
+            <td class="index">{{i + 1}}</td>
+            <td>{{task.taskName}}</td>
+            <td><input type="checkbox" (change)="changeStatus(i)" [checked]="task.taskStatus"></td>
+            <td><span [ngStyle]="{color: task.taskStatus ? 'green' : 'red' }">{{task.taskProgress}}</span></td>
+            <td><button class="btn edit-btn" (click)="edit(i)">Edit</button></td>
+            <td><button class="btn delete-btn" [disabled]="!task.taskStatus || editMode" (click)="delete(i)">Delete</button></td>
+        </tr>
+    </table>
+    <div class="edit-block" *ngIf="editMode">
+        <input type="text" class="input" [value]="editValue" #edit>
+        <button class="btn save-btn" (click)="save(edit.value)">Save</button>
+    </div>
+    <ng-template #none>
+        <div class="none">
+            <p>You have not tasks</p>
+        </div>
+    </ng-template>
+
+</div>
